@@ -16,18 +16,28 @@ const style = {
 };
 
 export default class ServingForm extends Component {
-  makeRequest() {
-    axios.post('http://localhost:8080/api/ingredients/')
-      .then(function(response) {
-         console.log(response);
-      })
-  }
+  // handleSubmit = () => {
+  //   var xhr = new XMLHttpRequest()
+  //   xhr.addEventListener('load', () => {
+  //     console.log(xhr.responseText)
+  //   })
+  //
+  //   xhr.open('GET', 'https://google.com')
+  //   xhr.send()
+  // }
 
   render() {
+    axios.get('https://google.com')
+      .then(function(response) {
+        console.log(response)
+      })
+      .catch(function(error) {
+        console.log(error)
+      })
     return (
       <div>
         <h1> Enter Serving  </h1>
-        <form onSubmit={this.makeRequest}>
+        <form>
           <FormCell labelText="Food:" />
           <FormCell labelText="Weight:" />
           <input type="submit" value="Submit" style={style.submitStyle} />
