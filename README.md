@@ -1,4 +1,4 @@
-## Prerequistes
+## Prerequisites
 
 * jest
 * node
@@ -6,6 +6,10 @@
 * react-dom
 * request
 * typescript 
+
+You can install these libraries/packages by
+
+`npm install` or `yarn install`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
