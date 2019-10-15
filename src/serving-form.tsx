@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import request from 'request'
 import FormCell from './components/form-cell'
 
 const style = {
@@ -16,24 +16,12 @@ const style = {
 };
 
 export default class ServingForm extends Component {
-  // handleSubmit = () => {
-  //   var xhr = new XMLHttpRequest()
-  //   xhr.addEventListener('load', () => {
-  //     console.log(xhr.responseText)
-  //   })
-  //
-  //   xhr.open('GET', 'https://google.com')
-  //   xhr.send()
-  // }
-
   render() {
-    axios.get('https://google.com')
-      .then(function(response) {
-        console.log(response)
-      })
-      .catch(function(error) {
-        console.log(error)
-      })
+    request('http://localhost:8080/api/ingredients', function (error, response, body) {
+      console.error('error:', error); // Print the error if one occurred
+      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+      console.log('body:', body); // Print the HTML for the Google homepage.
+    });
     return (
       <div>
         <h1> Enter Serving  </h1>
