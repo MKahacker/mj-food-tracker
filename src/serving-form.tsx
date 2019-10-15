@@ -16,16 +16,20 @@ const style = {
 };
 
 export default class ServingForm extends Component {
-  render() {
+  handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     request('http://localhost:8080/api/ingredients', function (error, response, body) {
-      console.error('error:', error); // Print the error if one occurred
+      if (error != null) {
+        console.error('error:', error); // Print the error if one occurred
+      }
       console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
       console.log('body:', body); // Print the HTML for the Google homepage.
     });
+  }
+  render() {
     return (
       <div>
         <h1> Enter Serving  </h1>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <FormCell labelText="Food:" />
           <FormCell labelText="Weight:" />
           <input type="submit" value="Submit" style={style.submitStyle} />
