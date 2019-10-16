@@ -4,8 +4,9 @@ import ServingForm from './serving-form';
 import WelcomePage from './welcome-page';
 import {
   BrowserRouter as Router,
+  Link,
   Route,
-  Link
+  Switch
 } from "react-router-dom";
 
 const App: React.FC = () => {
@@ -24,16 +25,16 @@ const App: React.FC = () => {
             </ul>
           </nav>
         </div>
-        <Route path="/" exact component={WelcomePage} />
-        <Route path="/serving" exact component={ServingForm}/>
+        <Switch>
+          <Route path="/" exact>
+            <WelcomePage />
+          </Route>
+          <Route path="/serving">
+            <ServingForm />
+          </Route>
+        </Switch>
       </div>
     </Router>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <WelcomePage />
-    //     <ServingForm/>
-    //   </header>
-    // </div>
   );
 }
 
