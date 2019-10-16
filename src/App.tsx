@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import './App.css';
 import ServingForm from './serving-form';
 import WelcomePage from './welcome-page';

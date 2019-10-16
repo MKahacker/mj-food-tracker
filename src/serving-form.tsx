@@ -32,6 +32,8 @@ export default class ServingForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <FormCell labelText="Food:" />
           <FormCell labelText="Weight:" />
+          <FormCell labelText="Fat:" />
+          <FormCell labelText="Carbs:" />
           <input type="submit" value="Submit" style={style.submitStyle} />
         </form>
       </div>
