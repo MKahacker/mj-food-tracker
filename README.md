@@ -2,10 +2,11 @@
 
 * jest
 * node
+* node-sass
 * react
 * react-dom
 * request
-* typescript 
+* typescript
 
 You can install these libraries/packages by
 
