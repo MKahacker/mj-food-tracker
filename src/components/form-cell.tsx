@@ -11,6 +11,7 @@ const style = {
 };
 
 export interface Props {
+  inputName: string,
   labelText: string
 }
 
@@ -19,7 +20,7 @@ export default class FormCell extends Component<Props> {
     return (
       <div style={style.containerStyle}>
         <label style={style.labelStyle}>
-          {this.props.labelText}
+          {this.props.labelText + ":"}
         </label>
         <input type="text"/>
       </div>

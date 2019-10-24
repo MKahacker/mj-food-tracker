@@ -1,3 +1,20 @@
+## Prerequisites
+
+* jest
+* node
+* node-sass
+* react
+* react-dom
+* react-router-dom
+* request
+* typescript
+
+Version details can be found in `package.json`
+
+You can install these libraries/packages by
+
+`npm install` or `yarn install`
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -5,6 +22,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `yarn start`
+
+Can also use
+
+### `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

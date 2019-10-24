@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import axios from 'axios'
+import request from 'request'
 import FormCell from './components/form-cell'
 
 const style = {
@@ -16,16 +16,15 @@ const style = {
 };
 
 export default class ServingForm extends Component {
-  // handleSubmit = () => {
-  //   var xhr = new XMLHttpRequest()
-  //   xhr.addEventListener('load', () => {
-  //     console.log(xhr.responseText)
-  //   })
-  //
-  //   xhr.open('GET', 'https://google.com')
-  //   xhr.send()
-  // }
-
+  handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    request('http://localhost:8080/api/ingredients', function (error, response, body) {
+      if (error != null) {
+        console.error('error:', error); // Print the error if one occurred
+      }
+      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
+      console.log('body:', body); // Print the HTML for the Google homepage.
+    });
+  }
   render() {
     axios.get('https://google.com')
       .then(function(response) {
@@ -37,9 +36,12 @@ export default class ServingForm extends Component {
     return (
       <div>
         <h1> Enter Serving  </h1>
-        <form>
-          <FormCell labelText="Food:" />
-          <FormCell labelText="Weight:" />
+        <form onSubmit={this.handleSubmit}>
+          <FormCell inputName="name" labelText="Name" />
+          <FormCell inputName="serving" labelText="Serving Size" />
+          <FormCell inputName="fat" labelText="Fat" />
+          <FormCell inputName="carbs" labelText="Carbs" />
+          <FormCell inputName="protein" labelText="Protein" />
           <input type="submit" value="Submit" style={style.submitStyle} />
         </form>
       </div>

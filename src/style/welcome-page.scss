@@ -1,0 +1,17 @@
+@import 'variables.scss';
+
+.welcome-page {
+  div {
+    margin: 7% 15%;
+    a {
+      background-color: rgba(100, 164, 109, 1);
+      border-radius: 25vh;
+      display: block;
+      float: right;
+      height: 10vh;
+      margin: 0 10vh;
+      padding-top: 3vh;
+      width: 50vh;
+    }
+  }
+}
