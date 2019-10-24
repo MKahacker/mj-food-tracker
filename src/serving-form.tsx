@@ -26,13 +26,6 @@ export default class ServingForm extends Component {
     });
   }
   render() {
-    axios.get('https://google.com')
-      .then(function(response) {
-        console.log(response)
-      })
-      .catch(function(error) {
-        console.log(error)
-      })
     return (
       <div>
         <h1> Enter Serving  </h1>
