@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import request from 'request'
+import axios  from 'axios'
 import FormCell from './components/form-cell'
 
 const style = {
@@ -16,15 +16,36 @@ const style = {
 };
 
 export default class ServingForm extends Component {
-  handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    request('http://localhost:8080/api/ingredients', function (error, response, body) {
-      if (error != null) {
-        console.error('error:', error); // Print the error if one occurred
-      }
-      console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-      console.log('body:', body); // Print the HTML for the Google homepage.
-    });
+  constructor() {
+    super({})
+    this.state = {
+      name: '',
+      serving: 0,
+      fat: 0,
+      carbs: 0,
+      protein: 0
+    }
   }
+
+  handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    axios.post('http://localhost:8080/api/ingredients',
+      {
+        name: 'Test',
+        serving: 0,
+        fat: 0,
+        carbs: 0,
+        protein: 0
+      })
+      .then(function(response){
+        console.log(response)
+      })
+      .catch(function(err) {
+        console.log("shit something happend")
+        console.log(err)
+      })
+  }
+  
   render() {
     return (
       <div>

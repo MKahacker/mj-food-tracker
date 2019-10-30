@@ -22,7 +22,7 @@ export default class FormCell extends Component<Props> {
         <label style={style.labelStyle}>
           {this.props.labelText + ":"}
         </label>
-        <input type="text"/>
+        <input type="text" name={this.props.inputName} ref={this.props.inputName}/>
       </div>
     );
   }
