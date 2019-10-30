@@ -12,7 +12,8 @@ const style = {
 
 export interface Props {
   inputName: string,
-  labelText: string
+  labelText: string,
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default class FormCell extends Component<Props> {
@@ -22,7 +23,12 @@ export default class FormCell extends Component<Props> {
         <label style={style.labelStyle}>
           {this.props.labelText + ":"}
         </label>
-        <input type="text" name={this.props.inputName} ref={this.props.inputName}/>
+        <input
+          type="text"
+          name={this.props.inputName}
+          ref={this.props.inputName}
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }
