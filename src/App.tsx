@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './App.scss';
-import ServingForm from './serving-form';
-import WelcomePage from './welcome-page';
+import ServingForm from './pages/serving-form';
+import WelcomePage from './pages/welcome-page';
+import MealForm from './pages/meal-form'
 import {
   BrowserRouter as Router,
   Link,
@@ -31,6 +32,9 @@ const App: React.FC = () => {
           </Route>
           <Route path="/serving">
             <ServingForm />
+          </Route>
+          <Route path="/meal">
+            <MealForm />
           </Route>
         </Switch>
       </div>

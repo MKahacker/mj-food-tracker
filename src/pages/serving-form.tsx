@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios  from 'axios'
-import FormCell from './components/form-cell'
+import FormCell from '../components/form-cell'
 
 const style = {
   submitStyle: {

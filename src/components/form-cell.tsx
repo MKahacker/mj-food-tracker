@@ -13,7 +13,7 @@ const style = {
 export interface Props {
   inputName: string,
   labelText: string,
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default class FormCell extends Component<Props> {
