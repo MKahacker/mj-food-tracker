@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FormCell from '../components/form-cell'
+import '../style/meal-form.scss'
 
 export default class MealForm extends Component {
   render() {
@@ -12,6 +13,10 @@ export default class MealForm extends Component {
             labelText="Name"
             inputName="meal"
           />
+        </form>
+        <div className="addIngredient">Add Ingredient</div>
+        <form>
+          <input type="submit" value="Submit" className="submitBtn" />
         </form>
       </div>
     )

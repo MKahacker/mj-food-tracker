@@ -2,19 +2,6 @@ import React, { Component } from 'react'
 import axios  from 'axios'
 import FormCell from '../components/form-cell'
 
-const style = {
-  submitStyle: {
-    width: '55%',
-    height: '30px',
-    marginTop: '20px',
-    color: '#fff',
-    background: '#282c34',
-    borderColor: '#fff',
-    borderRadius: 20,
-    borderWidth: 1
-  }
-};
-
 interface ServingState {
   name: String,
   serving: Number,
@@ -98,7 +85,7 @@ export default class ServingForm extends Component<{}, ServingState> {
             labelText="Protein"
             onChange={this.handleInputChange}
           />
-          <input type="submit" value="Submit" style={style.submitStyle} />
+          <input type="submit" value="Submit" className="submitBtn" />
         </form>
       </div>
     )

@@ -1,0 +1,23 @@
+@import 'variables.scss';
+
+.submitBtn {
+  width: 55%;
+  height: 30px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: $secondaryColor;
+  border-color: #fff;
+  border-radius: 20;
+  border-width: 1;
+}
+
+.addIngredient {
+  text-align: center;
+  height: 8vh;
+  width: 20vh;
+  margin-left: 45%;
+  padding-top: 5vh;
+  color: #fff;
+  border-radius: 20px;
+  background-color: $secondaryColor;
+}
