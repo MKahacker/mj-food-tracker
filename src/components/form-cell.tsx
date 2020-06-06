@@ -1,25 +1,34 @@
 import React, { Component } from 'react'
 
-const containerStyle = {
-  margin: '10px 0'
-}
-
-const labelStyle = {
-  margin: '0 10px'
-}
+const style = {
+  containerStyle: {
+    justify: 'left',
+    margin: '10px 0'
+  },
+  labelStyle: {
+    margin: '0 10px'
+  }
+};
 
 export interface Props {
-  labelText: string
+  inputName: string,
+  labelText: string,
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
 }
 
 export default class FormCell extends Component<Props> {
   render() {
     return (
-      <div style={containerStyle}>
-        <label style={labelStyle}>
-          {this.props.labelText}
+      <div style={style.containerStyle}>
+        <label style={style.labelStyle}>
+          {this.props.labelText + ":"}
         </label>
-        <input type="text"/>
+        <input
+          type="text"
+          name={this.props.inputName}
+          ref={this.props.inputName}
+          onChange={this.props.onChange}
+        />
       </div>
     );
   }

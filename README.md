@@ -2,10 +2,14 @@
 
 * jest
 * node
+* node-sass
 * react
 * react-dom
+* react-router-dom
 * request
-* typescript 
+* typescript
+
+Version details can be found in `package.json`
 
 You can install these libraries/packages by
 
